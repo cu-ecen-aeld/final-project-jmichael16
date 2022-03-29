@@ -49,7 +49,5 @@ for LAYER in "${LAYERS[@]}"; do
   fi
 done
 
-exit 0
-
 set -e
 bitbake core-image-base
