@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script to build image for qemu.
+# Script to build image for raspberry pi 4 (64-bit)
 # Authors: Siddhant Jajoo, Jake Michael
 
 git submodule init
@@ -14,7 +14,14 @@ source poky/oe-init-build-env
 declare -a CONFLINES=(
   "MACHINE = \"raspberrypi4-64\""
   "ENABLE_UART = \"1\""
-)
+  "DISTRO_FEATURES_append = \" wifi\""
+  "IMAGE_FEATURES_append = \" ssh-server-openssh\""
+  "IMAGE_INSTALL_append = \"wpa-supplicant python3 vim\""
+) # end CONFLINES array
+
+#  "EXTRA_USERS_PARAMS = \"usermod -p \$6\$GIddyArLKrtrinI5\$bMgWGz8ZvUI4RwHsUdCGndGvjp5tex8FMIQ9IXpq5NHqyAd6Wl25.xjuvI/liupOjRAmOyD7tS9PXez4P8gAp. root; \""
+  #  "EXTRA_USERS_PARAMS = \"usermod -P oowuee8oojeeR root;\""
+  # "EXTRA_USERS_PARAMS = \"usermod -p \$6\$GIddyArLKrtrinI5\$bMgWGz8ZvUI4RwHsUdCGndGvjp5tex8FMIQ9IXpq5NHqyAd6Wl25.xjuvI/liupOjRAmOyD7tS9PXez4P8gAp root;\""
 
 # configuration lines are each added to local.conf if not already present
 for CONFLINE in "${CONFLINES[@]}"; do
@@ -36,6 +43,7 @@ declare -a LAYERS=(
   "meta-openembedded/meta-oe"
   "meta-openembedded/meta-python"
   "meta-openembedded/meta-networking"
+  "meta-jmiv" # my custom layer
 )
 
 for LAYER in "${LAYERS[@]}"; do
@@ -50,4 +58,5 @@ for LAYER in "${LAYERS[@]}"; do
 done
 
 set -e
+
 bitbake core-image-base
