@@ -3,8 +3,8 @@ ctrl_interface_group=0
 update_config=1
 
 network={
-  ssid="<WIFI_NAME>"
-  psk="<password>"
+  ssid="YOUR_SSID"
+  psk="YOUR_PASSKEY"
   proto=RSN
   key_mgmt=WPA-PSK
   pairwise=CCMP

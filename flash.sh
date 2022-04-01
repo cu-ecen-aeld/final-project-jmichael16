@@ -1,7 +1,7 @@
 #!/bin/bash
 # Author: Jake Michael
 
-bzcat build/tmp/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64*.wic.bz2 | sudo dd of=/dev/sdc status=progress
+bzcat build/tmp/deploy/images/raspberrypi4-64/core-image-jmiv-raspberrypi4-64*.wic.bz2 | sudo dd of=/dev/sdc conv=fsync bs=4M status=progress
 
 
 << 'MULTILINE-COMMENT'
