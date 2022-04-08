@@ -13,12 +13,11 @@ source poky/oe-init-build-env
 # note the quotation escape sequence so that the quotes also get appended to local.conf
 declare -a CONFLINES=(
   "MACHINE = \"raspberrypi4-64\""
-#  "ENABLE_UART = \"1\""
-#  "DISTRO_FEATURES_append = \" wifi\""
-#  "IMAGE_FEATURES_append = \" ssh-server-openssh\""
-#  "IMAGE_INSTALL_append = \" wpa-supplicant python3 vim\""
-#  "INHERIT += \"extrausers\""
-#  "EXTRA_USERS_PARAMS = \"usermod -p \$6\$GIddyArLKrtrinI5\$bMgWGz8ZvUI4RwHsUdCGndGvjp5tex8FMIQ9IXpq5NHqyAd6Wl25.xjuvI/liupOjRAmOyD7tS9PXez4P8gAp. root;\""
+  "ENABLE_UART = \"1\""
+  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart2.dtbo\""
+  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart3.dtbo\""
+  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart4.dtbo\""
+  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart5.dtbo\""
 ) # end CONFLINES array
 
 
