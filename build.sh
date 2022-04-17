@@ -14,10 +14,10 @@ source poky/oe-init-build-env
 declare -a CONFLINES=(
   "MACHINE = \"raspberrypi4-64\""
   "ENABLE_UART = \"1\""
-  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart2.dtbo\""
+#  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart2.dtbo\""
   "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart3.dtbo\""
-  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart4.dtbo\""
-  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart5.dtbo\""
+#  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart4.dtbo\""
+#  "RPI_KERNEL_DEVICETREE_OVERLAYS_append = \" overlays/uart5.dtbo\""
 ) # end CONFLINES array
 
 
