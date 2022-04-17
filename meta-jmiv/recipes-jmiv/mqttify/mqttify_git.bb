@@ -10,7 +10,7 @@ SRC_URI = "git://git@github.com/jmichael16/MQTT-ify.git;protocol=ssh;branch=main
 PV = "1.0+git${SRCPV}"
 
 # Set to reference a specific commit hash in your assignment repo
-SRCREV = "5e5044714107c4210d0beebb63a577e06be15f25"  
+SRCREV = "e654b1775aa86161aa3637951b01c6d41d0ff238"  
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://www.yoctoproject.org/docs/latest/ref-manual/ref-manual.html#var-WORKDIR
